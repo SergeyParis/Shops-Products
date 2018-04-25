@@ -1,0 +1,8 @@
+D:\dev\projects\Parser eBay\SDK\bin\Debug\SDK.dll
+D:\dev\projects\Parser eBay\SDK\bin\Debug\SDK.pdb
+D:\dev\projects\Parser eBay\SDK\obj\Debug\SDK.csprojResolveAssemblyReference.cache
+D:\dev\projects\Parser eBay\SDK\obj\Debug\SDK.eBay.eBaySource.resources
+D:\dev\projects\Parser eBay\SDK\obj\Debug\SDK.csproj.GenerateResource.cache
+D:\dev\projects\Parser eBay\SDK\obj\Debug\SDK.csproj.CoreCompileInputs.cache
+D:\dev\projects\Parser eBay\SDK\obj\Debug\SDK.dll
+D:\dev\projects\Parser eBay\SDK\obj\Debug\SDK.pdb

@@ -1,0 +1,14 @@
+D:\dev\projects\Shops Parser\Data\bin\Debug\Data.dll
+D:\dev\projects\Shops Parser\Data\bin\Debug\Data.pdb
+D:\dev\projects\Shops Parser\Data\obj\Debug\ShopProducts.Data.csproj.CoreCompileInputs.cache
+D:\dev\projects\Shops Parser\Data\obj\Debug\Data.dll
+D:\dev\projects\Shops Parser\Data\obj\Debug\Data.pdb
+D:\dev\projects\Shops Parser\Data\bin\Debug\Data.dll.config
+D:\dev\projects\Shops Parser\Data\bin\Debug\EntityFramework.dll
+D:\dev\projects\Shops Parser\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\dev\projects\Shops Parser\Data\bin\Debug\SDK.dll
+D:\dev\projects\Shops Parser\Data\bin\Debug\SDK.pdb
+D:\dev\projects\Shops Parser\Data\bin\Debug\EntityFramework.xml
+D:\dev\projects\Shops Parser\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\dev\projects\Shops Parser\Data\obj\Debug\ShopProducts.Data.csprojResolveAssemblyReference.cache
+D:\dev\projects\Shops Parser\Data\obj\Debug\ShopProducts.Data.csproj.CopyComplete

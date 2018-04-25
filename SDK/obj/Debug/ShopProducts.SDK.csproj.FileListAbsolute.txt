@@ -1,0 +1,8 @@
+D:\dev\projects\Shops Parser\SDK\obj\Debug\SDK.Shops.eBay.eBaySource.resources
+D:\dev\projects\Shops Parser\SDK\obj\Debug\ShopProducts.SDK.csproj.GenerateResource.cache
+D:\dev\projects\Shops Parser\SDK\obj\Debug\ShopProducts.SDK.csproj.CoreCompileInputs.cache
+D:\dev\projects\Shops Parser\SDK\obj\Debug\SDK.dll
+D:\dev\projects\Shops Parser\SDK\obj\Debug\SDK.pdb
+D:\dev\projects\Shops Parser\SDK\bin\Debug\SDK.dll
+D:\dev\projects\Shops Parser\SDK\bin\Debug\SDK.pdb
+D:\dev\projects\Shops Parser\SDK\obj\Debug\ShopProducts.SDK.csprojResolveAssemblyReference.cache
