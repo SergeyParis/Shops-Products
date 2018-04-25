@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ItemsConfiguration.cs" />
+    <Compile Include="Configuration\QueriesConfiguration.cs" />
     <Compile Include="Configuration\ShopsConfiguration.cs" />
+    <Compile Include="Model\Query.cs" />
     <Compile Include="Model\Shop.cs" />
     <Compile Include="Model\Wrap\SingleItemWrapped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

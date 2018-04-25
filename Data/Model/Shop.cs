@@ -2,13 +2,14 @@
 
 namespace ShopProducts.Data
 {
-    internal sealed class Shop
+    public class Shop
     {
         internal int Id { get; set; }
         
         public string Name { get; set; }
-        public IEnumerable<SingleItemWrapped> Items { get; set; }
+        public IEnumerable<Query> Queries { get; set; }
 
+        internal Shop() { }
         public Shop(string name)
         {
             Name = name;

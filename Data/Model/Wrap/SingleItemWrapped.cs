@@ -1,6 +1,6 @@
 ﻿namespace ShopProducts.Data
 {
-    internal sealed class SingleItemWrapped : ShopProducts.SDK.ISingleItem
+    public sealed class SingleItemWrapped : ShopProducts.SDK.ISingleItem
     {
         internal int DataBaseId { get; set; }
 

@@ -1,0 +1,17 @@
+﻿using System.Data.Entity.ModelConfiguration;
+
+namespace ShopProducts.Data
+{
+    internal class QueriesConfiguration : EntityTypeConfiguration<Query>
+    {
+        public QueriesConfiguration()
+        {
+            Map(it => it.ToTable("Queries"));
+
+            Property(it => it.Id).HasColumnType("int");
+            Property(it => it.Text).IsRequired().HasMaxLength(50).HasColumnType("nvarchar");
+
+            HasKey(it => it.Id);
+        }
+    }
+}
