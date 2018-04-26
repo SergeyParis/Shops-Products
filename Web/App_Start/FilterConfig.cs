@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace ShopsProducts.Web
+namespace Web
 {
     public class FilterConfig
     {

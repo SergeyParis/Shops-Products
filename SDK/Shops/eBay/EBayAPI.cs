@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
 
@@ -24,11 +25,14 @@ namespace ShopsProducts.SDK.eBay
             _serviceVersion = eBaySource.API_ServicesVersion;
         }
 
-        public static IEnumerable<ISingleItem> GetProducts(string keywords)
+        public async static Task<IEnumerable<ISingleItem>> GetProducts(string keywords)
         {
             // todo: (if countItems < 0) ==> (read all items)
+            
+            Task<XmlReader> task = new Task<XmlReader>((o) => GetXmlReaderSearchItems((string)o), keywords);
+            task.Start();
 
-            XmlReader reader = GetXmlReaderSearchItems(keywords);
+            XmlReader reader = await task;
             return ReadItems(reader);
         }
 

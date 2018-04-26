@@ -7,7 +7,7 @@ namespace ShopsProducts.Data
         internal int Id { get; set; }
         
         public string Name { get; set; }
-        public IEnumerable<Query> Queries { get; set; }
+        public List<Query> Queries { get; set; }
 
         internal Shop() { }
         public Shop(string name)

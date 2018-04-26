@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ShopsProducts.Web
+namespace Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -22,6 +22,13 @@ namespace ShopsProducts.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            InitSDK();
+        }
+
+        private void InitSDK()
+        {
+            ShopsProducts.SDK.eBay.EBayAPI.AppID = "SergeyPa-oil-PRD-be04e9d4e-5f87abbe";
         }
     }
 }

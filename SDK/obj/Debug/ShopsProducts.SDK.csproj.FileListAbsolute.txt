@@ -5,3 +5,4 @@ D:\dev\projects\Shops Products\SDK\obj\Debug\ShopsProducts.SDK.csproj.GenerateRe
 D:\dev\projects\Shops Products\SDK\obj\Debug\ShopsProducts.SDK.csproj.CoreCompileInputs.cache
 D:\dev\projects\Shops Products\SDK\obj\Debug\SDK.dll
 D:\dev\projects\Shops Products\SDK\obj\Debug\SDK.pdb
+D:\dev\projects\Shops Products\SDK\obj\Debug\ShopsProducts.SDK.csprojResolveAssemblyReference.cache
