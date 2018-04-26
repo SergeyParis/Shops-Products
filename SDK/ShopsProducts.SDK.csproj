@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CultureFromCountry.cs" />
+    <Compile Include="Extensions\StringEnumerableExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Interfaces\IDetailsSingleItem.cs" />
     <Compile Include="Shops\eBay\EBayAPI.cs" />
     <Compile Include="Shops\eBay\EBayDetailsSingleItem.cs" />

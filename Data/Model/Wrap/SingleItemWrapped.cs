@@ -23,24 +23,5 @@ namespace ShopsProducts.Data
             Country = country;
             Price = price;
         }
-
-        public static IEnumerable<SingleItemWrapped> ToWrapped(IEnumerable<SDK.ISingleItem> collection)
-        {
-            IEnumerator<SDK.ISingleItem> enumerator = collection.GetEnumerator();
-
-            int length = 0;
-            while (enumerator.MoveNext())
-                length++;
-
-            SingleItemWrapped[] array = new SingleItemWrapped[length];
-
-            int i = 0;
-            foreach (var one in collection)
-                array[i++] = ToWrapped(one);
-
-            return array;
-        }
-        public static SingleItemWrapped ToWrapped(SDK.ISingleItem one) 
-            => new SingleItemWrapped(one.Id, one.Title, one.GalleryUrl, one.Url, one.Country, one.Price);
     }
 }

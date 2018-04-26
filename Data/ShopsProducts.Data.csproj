@@ -47,12 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ItemDetailsConfiguration.cs" />
     <Compile Include="Configuration\ItemsConfiguration.cs" />
     <Compile Include="Configuration\QueriesConfiguration.cs" />
     <Compile Include="Configuration\ShopsConfiguration.cs" />
     <Compile Include="Model\Query.cs" />
     <Compile Include="Model\Shop.cs" />
     <Compile Include="Model\Wrap\DetailsSingleItemWrapped.cs" />
+    <Compile Include="Model\Wrap\Extensions\IDetailsSingleItemEnumerableExtensions.cs" />
+    <Compile Include="Model\Wrap\Extensions\ISingleItemEnumerableExtensions.cs" />
+    <Compile Include="Model\Wrap\Extensions\ISingleItemExtensions.cs" />
+    <Compile Include="Model\Wrap\Extensions\IDetailsSingleItemExtensions.cs" />
     <Compile Include="Model\Wrap\SingleItemWrapped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShopsProductsContext.cs" />

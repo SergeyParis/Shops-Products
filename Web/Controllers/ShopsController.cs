@@ -28,7 +28,7 @@ namespace Web.Controllers
         public async Task<ActionResult> EBay(string query)
         {
             IEnumerable<ISingleItem> items = await EBayAPI.GetProducts(query);
-            IEnumerable<SingleItemWrapped> itemsWrapped = SingleItemWrapped.ToWrapped(items);
+            IEnumerable<SingleItemWrapped> itemsWrapped = items.ToWrapped();
 
             Query q = new Query(query) { Results = itemsWrapped };
 
