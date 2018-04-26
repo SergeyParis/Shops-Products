@@ -1,8 +1,8 @@
 ﻿using System;
-using ShopProducts.SDK.eBay;
-using ShopProducts.Data;
+using ShopsProducts.SDK.eBay;
+using ShopsProducts.Data;
 
-namespace ShopProducts.ConsoleTest
+namespace ShopsProducts.ConsoleTest
 {
     class Program
     {

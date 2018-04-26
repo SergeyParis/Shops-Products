@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ShopProducts.Data
+namespace ShopsProducts.Data
 {
     public class Query
     {
@@ -8,5 +8,8 @@ namespace ShopProducts.Data
         public string Text { get; set; }
 
         public IEnumerable<SingleItemWrapped> Results { get; set; }
+
+        internal Query() { }
+        public Query(string text) { Text = text; }
     }
 }

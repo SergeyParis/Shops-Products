@@ -6,7 +6,7 @@ using System.Web;
 using System.Xml;
 
 [assembly: InternalsVisibleTo("Tests")]
-namespace ShopProducts.SDK.eBay
+namespace ShopsProducts.SDK.eBay
 {
     public static class EBayAPI
     {

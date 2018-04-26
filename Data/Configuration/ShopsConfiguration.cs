@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 
-namespace ShopProducts.Data
+namespace ShopsProducts.Data
 {
     internal class ShopsConfiguration : EntityTypeConfiguration<Shop>
     {

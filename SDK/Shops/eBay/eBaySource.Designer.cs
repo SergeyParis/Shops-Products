@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopProducts.SDK.eBay {
+namespace ShopsProducts.SDK.eBay {
     using System;
     
     

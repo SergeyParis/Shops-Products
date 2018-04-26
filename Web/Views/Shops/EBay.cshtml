@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "EBay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row oneshop-top">
+    <div class="col-md-1">
+        <img src="~/Content/Images/Logo/eBayLogo.jpg" width="130px" />
+    </div>
+    <div class="col-md-10 col-md-offset-1 query-form">
+        @using (Html.BeginForm("EBay", "Shops"))
+        {
+            @Html.TextBox("query", "", new { @class = "form-control inline-block query-searchline" })
+            <input type="submit" name="search" value="Search" class="btn btn-primary query-buttonsubmit"/>
+        }
+    </div>
+</div>

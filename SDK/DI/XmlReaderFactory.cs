@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace ShopProducts.SDK
+namespace ShopsProducts.SDK
 {
     internal static class XmlReaderFactory
     {

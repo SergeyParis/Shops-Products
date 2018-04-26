@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace ShopProducts.Data
+namespace ShopsProducts.Data
 {
     public sealed class ShopsProductsContext : DbContext
     {

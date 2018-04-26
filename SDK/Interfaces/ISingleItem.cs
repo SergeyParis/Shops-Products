@@ -1,4 +1,4 @@
-﻿namespace ShopProducts.SDK
+﻿namespace ShopsProducts.SDK
 {
     public interface ISingleItem
     {

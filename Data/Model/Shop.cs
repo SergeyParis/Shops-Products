@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ShopProducts.Data
+namespace ShopsProducts.Data
 {
     public class Shop
     {

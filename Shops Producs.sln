@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopProducts.SDK", "SDK\ShopProducts.SDK.csproj", "{9AA50967-9D85-4570-910F-B5DF5BBB3753}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopsProducts.SDK", "SDK\ShopsProducts.SDK.csproj", "{9AA50967-9D85-4570-910F-B5DF5BBB3753}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopProducts.Tests", "Tests\ShopProducts.Tests.csproj", "{54862157-504E-41FE-9864-D6B92DDBE9B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopsProducts.Tests", "Tests\ShopsProducts.Tests.csproj", "{54862157-504E-41FE-9864-D6B92DDBE9B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopProducts.ConsoleTest", "ConsoleTest\ShopProducts.ConsoleTest.csproj", "{5BD467E1-3FC3-4C68-91AE-0A50F4E75DC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopsProducts.ConsoleTest", "ConsoleTest\ShopsProducts.ConsoleTest.csproj", "{5BD467E1-3FC3-4C68-91AE-0A50F4E75DC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopProducts.Data", "Data\ShopProducts.Data.csproj", "{2FC0B11B-9281-4E5A-B2D2-6CFE9DE50B9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopsProducts.Data", "Data\ShopsProducts.Data.csproj", "{2FC0B11B-9281-4E5A-B2D2-6CFE9DE50B9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopProducts.Web", "Web\ShopProducts.Web.csproj", "{E811F546-C90B-4055-A83F-2DD157D20E8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopsProducts.Web", "Web\ShopsProducts.Web.csproj", "{E811F546-C90B-4055-A83F-2DD157D20E8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

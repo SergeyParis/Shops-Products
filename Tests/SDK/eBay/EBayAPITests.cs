@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ShopProducts.SDK.eBay;
+using ShopsProducts.SDK.eBay;
 
-namespace Tests.SDK
+namespace ShopsProducts.Tests.SDK
 {
     [TestClass]
     public class EBayAPITests

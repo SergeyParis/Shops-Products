@@ -1,4 +1,4 @@
-﻿namespace ShopProducts.SDK.eBay
+﻿namespace ShopsProducts.SDK.eBay
 {
     internal class EBaySingleItem : ISingleItem
     {
