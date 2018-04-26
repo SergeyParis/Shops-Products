@@ -6,7 +6,7 @@ namespace ShopsProducts.SDK.eBay
 {
     class EBayDetailsSingleItem : IDetailsSingleItem
     {
-        public readonly long Id { get; set; }
+        public long Id { get; set; }
         public IEnumerable<string> ImagesUrl { get; set; }
 
         public EBayDetailsSingleItem(long id) : this(id, null) { }

@@ -45,7 +45,7 @@ namespace ShopsProducts.SDK.eBay
             task.Start();
 
             XmlReader reader = await task;
-            return ReadItems(reader);
+            return ReadItemsByKeywords(reader);
         }
         public async static Task<IEnumerable<IDetailsSingleItem>> GetProductsDetail(long[] ids)
         {
