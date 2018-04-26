@@ -117,13 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="API_GetProductsByKeywords_NameMethodAPI" xml:space="preserve">
+  <data name="API_FindingAPI_findItemsByKeywords" xml:space="preserve">
     <value>findItemsByKeywords</value>
   </data>
   <data name="API_ServicesVersion" xml:space="preserve">
     <value>1.0.0</value>
   </data>
-  <data name="API_SevicesURI_FindingService" xml:space="preserve">
+  <data name="API_SevicesURI_FindingApiUrl" xml:space="preserve">
     <value>http://svcs.ebay.com/services/search/FindingService/v1</value>
+  </data>
+  <data name="API_SevicesURI_ShoppingApiUrl" xml:space="preserve">
+    <value>http://open.api.ebay.com/shopping</value>
+  </data>
+  <data name="API_ShoppingAPI_GetMultipleItems" xml:space="preserve">
+    <value>GetMultipleItems</value>
+  </data>
+  <data name="API_ShoppingAPI_Version" xml:space="preserve">
+    <value>863</value>
   </data>
 </root>

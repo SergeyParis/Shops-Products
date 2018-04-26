@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopsProducts.SDK.eBay{
+namespace ShopsProducts.SDK.eBay {
     using System;
     
     
@@ -63,9 +63,9 @@ namespace ShopsProducts.SDK.eBay{
         /// <summary>
         ///   Ищет локализованную строку, похожую на findItemsByKeywords.
         /// </summary>
-        internal static string API_GetProductsByKeywords_NameMethodAPI {
+        internal static string API_FindingAPI_findItemsByKeywords {
             get {
-                return ResourceManager.GetString("API_GetProductsByKeywords_NameMethodAPI", resourceCulture);
+                return ResourceManager.GetString("API_FindingAPI_findItemsByKeywords", resourceCulture);
             }
         }
         
@@ -81,9 +81,36 @@ namespace ShopsProducts.SDK.eBay{
         /// <summary>
         ///   Ищет локализованную строку, похожую на http://svcs.ebay.com/services/search/FindingService/v1.
         /// </summary>
-        internal static string API_SevicesURI_FindingService {
+        internal static string API_SevicesURI_FindingApiUrl {
             get {
-                return ResourceManager.GetString("API_SevicesURI_FindingService", resourceCulture);
+                return ResourceManager.GetString("API_SevicesURI_FindingApiUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на http://open.api.ebay.com/shopping.
+        /// </summary>
+        internal static string API_SevicesURI_ShoppingApiUrl {
+            get {
+                return ResourceManager.GetString("API_SevicesURI_ShoppingApiUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на GetMultipleItems.
+        /// </summary>
+        internal static string API_ShoppingAPI_GetMultipleItems {
+            get {
+                return ResourceManager.GetString("API_ShoppingAPI_GetMultipleItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на 863.
+        /// </summary>
+        internal static string API_ShoppingAPI_Version {
+            get {
+                return ResourceManager.GetString("API_ShoppingAPI_Version", resourceCulture);
             }
         }
     }

@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CultureFromCountry.cs" />
+    <Compile Include="Interfaces\IDetailsSingleItem.cs" />
     <Compile Include="Shops\eBay\EBayAPI.cs" />
+    <Compile Include="Shops\eBay\EBayDetailsSingleItem.cs" />
     <Compile Include="Shops\eBay\EBaySingleItem.cs" />
     <Compile Include="Shops\eBay\eBaySource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -57,6 +59,7 @@
     <EmbeddedResource Include="Shops\eBay\eBaySource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>eBaySource.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ShopsProducts.SDK.eBay</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
