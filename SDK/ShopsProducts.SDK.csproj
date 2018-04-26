@@ -7,7 +7,7 @@
     <ProjectGuid>{9AA50967-9D85-4570-910F-B5DF5BBB3753}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SDK</RootNamespace>
+    <RootNamespace>ShopsProducts.SDK</RootNamespace>
     <AssemblyName>SDK</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CultureFromCountry.cs" />
     <Compile Include="Shops\eBay\EBayAPI.cs" />
     <Compile Include="Shops\eBay\EBaySingleItem.cs" />
     <Compile Include="Shops\eBay\eBaySource.Designer.cs">

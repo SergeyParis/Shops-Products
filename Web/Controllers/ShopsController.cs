@@ -12,16 +12,18 @@ namespace Web.Controllers
     {
         private static ShopsProductsContext context = new ShopsProductsContext();
 
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpGet]
         public ActionResult EBay()
         {
             return View();
         }
-        
+
         [HttpPost]
         public async Task<ActionResult> EBay(string query)
         {
@@ -34,14 +36,14 @@ namespace Web.Controllers
             // context.SaveChangesAsync();
 
             ViewBag.items = items.ToArray();
-            
+
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult EbayItem(long id)
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public ActionResult EbayItem(long id)
+        {
+            return View();
+        }
     }
 }

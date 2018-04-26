@@ -83,20 +83,14 @@ namespace ShopsProducts.SDK.eBay
                             reader.Read();
                             items[i].Url = reader.Value.Trim();
                             break;
-                        case "location":
-                            reader.Read();
-                            items[i].Location = reader.Value.Trim();
-                            break;
                         case "country":
                             reader.Read();
                             items[i].Country = reader.Value.Trim();
                             break;
                         case "currentPrice":
-                            items[i].CurrencyName = reader.GetAttribute("currencyId");
                             reader.Read();
                             items[i].Price = Convert.ToDecimal(reader.Value.Trim().Replace('.', ','));
                             break;
-
                     }
 
             return items;

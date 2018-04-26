@@ -7,7 +7,7 @@
     <ProjectGuid>{54862157-504E-41FE-9864-D6B92DDBE9B4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tests</RootNamespace>
+    <RootNamespace>ShopsProducts.Tests</RootNamespace>
     <AssemblyName>Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

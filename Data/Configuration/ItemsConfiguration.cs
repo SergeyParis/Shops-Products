@@ -9,12 +9,10 @@ namespace ShopsProducts.Data
             Map(it => it.ToTable("Items"));
             
             Property(it => it.DataBaseId).IsRequired().HasColumnType("int");
-            Property(it => it.CurrencyName).HasMaxLength(10).HasColumnType("nvarchar");
             Property(it => it.Price).HasColumnType("money");
             Property(it => it.Id).IsRequired().HasColumnType("bigint");
 
             Property(it => it.Country).HasMaxLength(20).HasColumnType("nvarchar"); 
-            Property(it => it.Location).HasMaxLength(20).HasColumnType("nvarchar");
             Property(it => it.Title).HasMaxLength(30).HasColumnType("nvarchar");
             Property(it => it.Url).HasColumnType("ntext");
             Property(it => it.GalleryUrl).HasColumnType("ntext");

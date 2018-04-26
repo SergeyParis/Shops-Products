@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopsProducts.SDK.eBay {
+namespace ShopsProducts.SDK.eBay{
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ShopsProducts.SDK.eBay {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SDK.Shops.eBay.eBaySource", typeof(eBaySource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ShopsProducts.SDK.Shops.eBay.eBaySource", typeof(eBaySource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
