@@ -2,15 +2,16 @@
 
 namespace ShopsProducts.Data
 {
-    internal class QueriesConfiguration : EntityTypeConfiguration<Query>
+    internal class SearchResultsConfiguration : EntityTypeConfiguration<SearchResultsWrapped>
     {
-        public QueriesConfiguration()
+        public SearchResultsConfiguration()
         {
-            Map(it => it.ToTable("Queries"));
+            Map(it => it.ToTable("SearchResults"));
 
             Property(it => it.Id).IsRequired().HasColumnType("int");
+            Property(it => it.PageIndex).HasColumnType("int");
             Property(it => it.Text).IsRequired().HasMaxLength(50).HasColumnType("nvarchar");
-
+            
             HasKey(it => it.Id);
         }
     }

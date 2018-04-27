@@ -27,15 +27,20 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<ActionResult> EBay(string query)
         {
-            IEnumerable<ISingleItem> items = await EBayAPI.GetProducts(query);
-            IEnumerable<SingleItemWrapped> itemsWrapped = items.ToWrapped();
+            SearchResults searchResults = await EBayAPI.GetProducts(query);
+            IEnumerable<ISingleItem> items = searchResults.Results;
+            IEnumerable<IDetailsSingleItem> itemsDetails = await EBayAPI.GetProductsDetail(items.Select(it => it.Id).ToArray());
 
-            Query q = new Query(query) { Results = itemsWrapped };
+            IEnumerable<SingleItemWrapped> itemsWrapped = items.ToWrapped();
+            IEnumerable<DetailsSingleItemWrapped> detailsItemsWrapped = itemsDetails.ToWrapped(itemsWrapped);
+            SearchResultsWrapped resultsWrapped = new SearchResultsWrapped(searchResults);
+
+            context.Database.Delete();
 
             // context.Shops.Where(s => s.Name == "eBay").First().Queries.Add(q);
             // context.SaveChangesAsync();
-
-            ViewBag.items = items.ToArray();
+            
+            ViewBag.itemsDetails = itemsDetails.ToArray();
 
             return View();
         }
@@ -43,6 +48,11 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult EbayItem(long id)
         {
+            IEnumerable<IDetailsSingleItem> items = (IEnumerable<IDetailsSingleItem>)ViewBag.itemsDetails;
+            IDetailsSingleItem detailsItem = items.Where(it => it.Id == id).First();
+            
+
+
             return View();
         }
     }

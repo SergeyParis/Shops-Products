@@ -45,6 +45,7 @@
     <Compile Include="Extensions\StringEnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Interfaces\IDetailsSingleItem.cs" />
+    <Compile Include="SearchResults.cs" />
     <Compile Include="Shops\eBay\EBayAPI.cs" />
     <Compile Include="Shops\eBay\EBayDetailsSingleItem.cs" />
     <Compile Include="Shops\eBay\EBaySingleItem.cs" />

@@ -5,7 +5,7 @@ namespace ShopsProducts.Data
 {
     public sealed class DetailsSingleItemWrapped : IDetailsSingleItem
     {
-        internal SingleItemWrapped SingleItem;
+        internal SingleItemWrapped SingleItem { get; set; }
 
         public long Id { get; set; }
         public IEnumerable<string> ImagesUrl { get; set; }

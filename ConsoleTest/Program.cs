@@ -2,7 +2,9 @@
 using ShopsProducts.SDK;
 using ShopsProducts.Data;
 using System.Globalization;
-
+using System.Collections.Generic;
+using ShopsProducts.SDK.eBay;
+using System.Linq;
 
 namespace ShopsProducts.ConsoleTest
 {
@@ -10,11 +12,16 @@ namespace ShopsProducts.ConsoleTest
     {
         static void Main(string[] args)
         {
-            //EBayAPI.AppID = "SergeyPa-oil-PRD-be04e9d4e-5f87abbe";
+            EBayAPI.AppID = "SergeyPa-oil-PRD-be04e9d4e-5f87abbe";
             //ShopsProductsContext context = new ShopsProductsContext();
 
-            decimal a = 54.23m;
-            Console.WriteLine(string.Format(CultureFromCountry.GetCulture("US"), "{0:C}", a));
+            IEnumerable<ISingleItem> items = EBayAPI.GetProducts("car").Result;
+            long[] ids = items.Select(it => it.Id).ToArray();
+
+            IEnumerable<IDetailsSingleItem> itemsDetails = EBayAPI.GetProductsDetail(ids).Result;
+            IEnumerable<SingleItemWrapped> itemsWrapped = items.ToWrapped();
+
+            IDetailsSingleItem[] a = itemsDetails.ToArray();
 
             Console.ReadKey();
         }
