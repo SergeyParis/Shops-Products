@@ -1,5 +1,6 @@
 ﻿@using ShopsProducts.SDK;
-@using System.Globalization;
+
+@model IEnumerable<ISingleItem>
 
 @{
     ViewBag.Title = "EBay";
@@ -22,7 +23,7 @@
         <ul>
             @if (ViewBag.items != null)
             {
-                ISingleItem[] array = (ISingleItem[])ViewBag.items;
+                ISingleItem[] array = Model;
 
                 for (int i = 0; i < array.Length; i++)
                 {

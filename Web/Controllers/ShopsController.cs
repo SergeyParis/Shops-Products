@@ -29,31 +29,23 @@ namespace Web.Controllers
         {
             SearchResults searchResults = await EBayAPI.GetProducts(query);
             IEnumerable<ISingleItem> items = searchResults.Results;
-            IEnumerable<IDetailsSingleItem> itemsDetails = await EBayAPI.GetProductsDetail(items.Select(it => it.Id).ToArray());
+            IEnumerable<IDetailsSingleItem> itemsDetails = await EBayAPI.GetProductsDetail(items);
 
-            IEnumerable<SingleItemWrapped> itemsWrapped = items.ToWrapped();
-            IEnumerable<DetailsSingleItemWrapped> detailsItemsWrapped = itemsDetails.ToWrapped(itemsWrapped);
             SearchResultsWrapped resultsWrapped = new SearchResultsWrapped(searchResults);
-
-            context.Database.Delete();
-
+            
             // context.Shops.Where(s => s.Name == "eBay").First().Queries.Add(q);
             // context.SaveChangesAsync();
             
-            ViewBag.itemsDetails = itemsDetails.ToArray();
-
-            return View();
+            return View(items);
         }
 
         [HttpGet]
         public ActionResult EbayItem(long id)
         {
             IEnumerable<IDetailsSingleItem> items = (IEnumerable<IDetailsSingleItem>)ViewBag.itemsDetails;
-            IDetailsSingleItem detailsItem = items.Where(it => it.Id == id).First();
+            IDetailsSingleItem detailsItem = items.Where(it => it.SingleItem.Id == id).First();
             
-
-
-            return View();
+            return View(detailsItem);
         }
     }
 }

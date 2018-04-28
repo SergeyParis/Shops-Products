@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ShopsProducts.Data
 {
     public static class IDetailsSingleItemEnumerableExtensions
     {
-        public static IEnumerable<DetailsSingleItemWrapped> ToWrapped(this IEnumerable<SDK.IDetailsSingleItem> collection, IEnumerable<SingleItemWrapped> singleCollection)
+        public static IEnumerable<DetailsSingleItemWrapped> ToWrapped(this IEnumerable<SDK.IDetailsSingleItem> collection)
         {
             IEnumerator<SDK.IDetailsSingleItem> enumerator = collection.GetEnumerator();
-            IEnumerator<SingleItemWrapped> singleEnumerator = singleCollection.GetEnumerator();
 
             int length = 0;
             while (enumerator.MoveNext())
@@ -16,8 +16,8 @@ namespace ShopsProducts.Data
             DetailsSingleItemWrapped[] array = new DetailsSingleItemWrapped[length];
 
             int i = 0;
-            while (enumerator.MoveNext() && singleEnumerator.MoveNext())
-                array[i++] = enumerator.Current.ToWrapped(singleEnumerator.Current);
+            while (enumerator.MoveNext())
+                array[i++] = enumerator.Current.ToWrapped();
 
             return array;
         }

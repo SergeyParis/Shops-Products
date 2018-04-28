@@ -6,13 +6,13 @@ namespace ShopsProducts.SDK.eBay
 {
     class EBayDetailsSingleItem : IDetailsSingleItem
     {
-        public long Id { get; set; }
+        public ISingleItem SingleItem { get; set; }
         public IEnumerable<string> ImagesUrl { get; set; }
 
-        public EBayDetailsSingleItem(long id) : this(id, null) { }
-        public EBayDetailsSingleItem(long id, IEnumerable<string> images)
+        public EBayDetailsSingleItem(ISingleItem item) : this(item, null) { }
+        public EBayDetailsSingleItem(ISingleItem item, IEnumerable<string> images)
         {
-            Id = id;
+            SingleItem = item;
             ImagesUrl = images;
         }
     }

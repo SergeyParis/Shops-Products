@@ -8,10 +8,10 @@ namespace ShopsProducts.Data
         {
             Map(it => it.ToTable("Items"));
 
-            Property(it => it.Id).IsRequired().HasColumnType("bigint");
+            Property(it => it.SingleItem.Id).IsRequired().HasColumnType("bigint");
             Property(it => it.ImagesUrlString).HasColumnType("ntext");
 
-            HasKey(it => it.Id);
+            HasKey(it => it.SingleItem.Id);
         }
     }
 }

@@ -4,7 +4,8 @@ namespace ShopsProducts.SDK
 {
     public interface IDetailsSingleItem
     {
-        long Id { get; set; }
+        ISingleItem SingleItem { get; set; }
+        
         IEnumerable<string> ImagesUrl { get; set; }
     }
 }
