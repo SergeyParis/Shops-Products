@@ -48,8 +48,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SDK\eBay\EBayAPITests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SDK\Shops\eBay\EBayAPITests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
