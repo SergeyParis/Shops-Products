@@ -26,9 +26,9 @@ namespace ShopsProducts.Data
             modelBuilder.Configurations.Add(new SearchResultsConfiguration());
             modelBuilder.Configurations.Add(new ItemDetailsConfiguration());
 
-            modelBuilder.Entity<DetailsSingleItemWrapped>().HasRequired(it => it.SingleItemWrapped).WithRequiredDependent(it => it.DetailsWrapped);
-            modelBuilder.Entity<SingleItemWrapped>().HasRequired(it => it.SearchResultsWrapped).WithMany(it => it.ResultsWrapped);
-            modelBuilder.Entity<SearchResultsWrapped>().HasRequired(it => it.Shop).WithMany(it => it.SearchResults);
+            modelBuilder.Entity<DetailsSingleItemWrapped>().HasRequired(it => it.SingleItemWrapped).WithRequiredDependent(it => it.DetailsWrapped).WillCascadeOnDelete(true);
+            modelBuilder.Entity<SingleItemWrapped>().HasRequired(it => it.SearchResultsWrapped).WithMany(it => it.ResultsWrapped).WillCascadeOnDelete(true);
+            modelBuilder.Entity<SearchResultsWrapped>().HasRequired(it => it.Shop).WithMany(it => it.SearchResults).WillCascadeOnDelete(true);
         }
     }
 }

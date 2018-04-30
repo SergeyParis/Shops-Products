@@ -10,10 +10,16 @@ namespace ShopsProducts.SDK
     {
         public string Text { get; set; }
         public int PageIndex { get; set; }
+        public DateTime LastUpdate { get; set; }
 
         public virtual IEnumerable<ISingleItem> Results { get; set; }
         
         public SearchResults(string text) : this(text, 1) { }
-        public SearchResults(string text, int pageIndex) { Text = text; PageIndex = pageIndex; }
+        public SearchResults(string text, int pageIndex) {
+            Text = text;
+            PageIndex = pageIndex;
+
+            LastUpdate = DateTime.Now;
+        }
     }
 }

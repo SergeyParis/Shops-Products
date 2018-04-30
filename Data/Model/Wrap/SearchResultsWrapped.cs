@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ShopsProducts.SDK;
 using System.Linq;
+using System;
 
 namespace ShopsProducts.Data
 {
@@ -26,11 +27,9 @@ namespace ShopsProducts.Data
         internal SearchResultsWrapped() : this("") { }
         public SearchResultsWrapped(string text) : this(text, 1) { }
         public SearchResultsWrapped(string text, int pageIndex) : base(text, pageIndex) { }
-
         public SearchResultsWrapped(SearchResults searchResults) : base(searchResults.Text, searchResults.PageIndex)
         {
             Results = searchResults.Results.Wrapped();
         }
-
     }
 }

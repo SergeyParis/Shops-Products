@@ -6,12 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System;
+using System.Data.Entity;
 
 namespace Web.Controllers
 {
     public class ShopsController : Controller
     {
         private static ShopsProductsContext context;
+        private static int hoursToUpdateEBay = 24;
 
         static ShopsController()
         {
@@ -23,12 +26,6 @@ namespace Web.Controllers
         {
             return View();
         }
-
-        //[HttpGet]
-        //public ActionResult EBay()
-        //{
-        //    return View();
-        //}
 
         [HttpPost]
         public async Task<ActionResult> EBay(string query = "")
@@ -45,9 +42,12 @@ namespace Web.Controllers
 
 
         [HttpGet]
-        public ActionResult EbayItem(long id)
+        public ActionResult EbayItem(long? id)
         {
-            ISingleItem item = GetSingleItem(id);
+            if (id == null)
+                return View("Error");
+
+            ISingleItem item = GetSingleItem(id.Value);
 
             if (item == null)
                 return View("Error");
@@ -72,6 +72,7 @@ namespace Web.Controllers
             return result;
         }
 
+
         [NonAction]
         private async Task<SearchResults> GetSearchResults(string query, int pageIndex = 1)
         {
@@ -79,24 +80,36 @@ namespace Web.Controllers
 
             IEnumerable<SearchResultsWrapped> cache = context.SearchResults.Where(it => it.Text == query && it.PageIndex == pageIndex);
 
-            if (cache.Count() == 0)
+            if (cache.Count() != 0)
             {
-                result = new SearchResultsWrapped(await EBayAPI.GetProductsWithDetails(query, pageIndex));
-                CachingSearchResults(result);
+                TimeSpan t = (DateTime.Now - cache.First().LastUpdate);
+                bool needUpdate = (DateTime.Now - cache.First().LastUpdate).Hours > hoursToUpdateEBay;
+
+                result = cache.First();
+                context.Entry(result).Collection(it => it.ResultsWrapped).Load();
+
+                if (needUpdate)
+                {
+                    SearchResultsWrapped resultAPI = new SearchResultsWrapped(await EBayAPI.GetProductsWithDetails(query, pageIndex));
+
+                    DeleteSearchResultsDb(result);
+                    AddSearchResultsDb(resultAPI);
+
+                    result = resultAPI;
+                }
             }
             else
             {
-                result = cache.First();
-                context.Entry(result).Collection(it => it.ResultsWrapped).Load();
+                result = new SearchResultsWrapped(await EBayAPI.GetProductsWithDetails(query, pageIndex));
+                AddSearchResultsDb(result);
             }
-            
+
             result.Results = result.ResultsWrapped.UnWrappedToEbay();
 
             return result;
         }
-
         [NonAction]
-        private void CachingSearchResults(SearchResults results)
+        private void AddSearchResultsDb(SearchResults results)
         {
             Shop eBay;
             IEnumerable<Shop> cache = context.Shops.Where(s => s.Name == "eBay");
@@ -117,10 +130,22 @@ namespace Web.Controllers
             resultsWrapped.ResultsWrapped.Select(it => it.SearchResultsWrapped = resultsWrapped);
             resultsWrapped.ResultsWrapped.Select(it => it.DetailsWrapped.SingleItemWrapped = it);
 
-            foreach (var one in resultsWrapped.ResultsWrapped)
-                Debug.WriteLine(one.DetailsWrapped);
-
             eBay.SearchResults.Add(resultsWrapped);
+
+            context.SaveChanges();
+        }
+        [NonAction]
+        private void DeleteSearchResultsDb(SearchResultsWrapped results)
+        {
+            IEnumerable<SearchResultsWrapped> cache = context.SearchResults.Where(it => it.Id == results.Id);
+
+            if (cache.Count() == 0)
+                return;
+
+            SearchResultsWrapped delete = cache.First();
+
+            context.SearchResults.Remove(delete);
+            context.Entry(delete).State = EntityState.Deleted;
 
             context.SaveChanges();
         }

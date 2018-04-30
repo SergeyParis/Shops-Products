@@ -24,9 +24,9 @@ namespace ShopsProducts.Data
         public DetailsSingleItemWrapped DetailsWrapped { get; set; }
 
         internal SingleItemWrapped() { }
-        public SingleItemWrapped(long id, string title, string galleryURL, string url, string country, decimal price)
+        public SingleItemWrapped(long itemId, string title, string galleryURL, string url, string country, decimal price)
         {
-            ItemId = id;
+            ItemId = itemId;
             Title = title;
             GalleryUrl = galleryURL;
             Url = url;

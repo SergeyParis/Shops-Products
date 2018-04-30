@@ -75,7 +75,7 @@ namespace ShopsProducts.SDK.eBay
             XmlReader reader = XmlReaderFactory.GetReader(document);
             return ReadItemsByIds(reader);
         }
-
+        
         private static XmlReader Get_ItemsByKeywords(dynamic d)
         {
             string keywords = d.keywords ?? "";
@@ -189,6 +189,5 @@ namespace ShopsProducts.SDK.eBay
 
             return items.ToArray();
         }
-
     }
 }
