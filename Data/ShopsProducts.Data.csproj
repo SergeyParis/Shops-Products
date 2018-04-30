@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Configuration\ItemDetailsConfiguration.cs" />
     <Compile Include="Configuration\ItemsConfiguration.cs" />
-    <Compile Include="Configuration\QueriesConfiguration.cs" />
+    <Compile Include="Configuration\SearchResultsConfiguration.cs" />
     <Compile Include="Configuration\ShopsConfiguration.cs" />
     <Compile Include="Model\Wrap\SearchResultsWrapped.cs" />
     <Compile Include="Model\Shop.cs" />

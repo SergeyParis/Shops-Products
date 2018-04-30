@@ -8,16 +8,16 @@ namespace ShopsProducts.Data
         {
             Map(it => it.ToTable("Items"));
             
-            Property(it => it.DataBaseId).IsRequired().HasColumnType("int");
+            Property(it => it.Id).IsRequired().HasColumnType("int");
             Property(it => it.Price).HasColumnType("money");
-            Property(it => it.Id).IsRequired().HasColumnType("bigint");
+            Property(it => it.ItemId).IsRequired().HasColumnType("bigint");
 
             Property(it => it.Country).HasMaxLength(20).HasColumnType("nvarchar"); 
-            Property(it => it.Title).HasMaxLength(30).HasColumnType("nvarchar");
+            Property(it => it.Title).HasMaxLength(500).HasColumnType("nvarchar");
             Property(it => it.Url).HasColumnType("ntext");
             Property(it => it.GalleryUrl).HasColumnType("ntext");
 
-            HasKey(it => it.DataBaseId);
+            HasKey(it => it.Id);
         }
     }
 }

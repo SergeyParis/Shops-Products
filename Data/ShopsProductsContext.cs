@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Linq;
 
 namespace ShopsProducts.Data
 {
@@ -24,6 +25,10 @@ namespace ShopsProducts.Data
             modelBuilder.Configurations.Add(new ItemsConfiguration());
             modelBuilder.Configurations.Add(new SearchResultsConfiguration());
             modelBuilder.Configurations.Add(new ItemDetailsConfiguration());
+
+            modelBuilder.Entity<DetailsSingleItemWrapped>().HasRequired(it => it.SingleItemWrapped).WithRequiredDependent(it => it.DetailsWrapped);
+            modelBuilder.Entity<SingleItemWrapped>().HasRequired(it => it.SearchResultsWrapped).WithMany(it => it.ResultsWrapped);
+            modelBuilder.Entity<SearchResultsWrapped>().HasRequired(it => it.Shop).WithMany(it => it.SearchResults);
         }
     }
 }

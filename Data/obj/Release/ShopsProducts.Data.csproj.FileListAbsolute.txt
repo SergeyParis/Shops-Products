@@ -1,0 +1,14 @@
+D:\dev\projects\Shops Products\Data\bin\Release\Data.dll.config
+D:\dev\projects\Shops Products\Data\bin\Release\Data.dll
+D:\dev\projects\Shops Products\Data\bin\Release\Data.pdb
+D:\dev\projects\Shops Products\Data\bin\Release\EntityFramework.dll
+D:\dev\projects\Shops Products\Data\bin\Release\EntityFramework.SqlServer.dll
+D:\dev\projects\Shops Products\Data\bin\Release\SDK.dll
+D:\dev\projects\Shops Products\Data\bin\Release\SDK.pdb
+D:\dev\projects\Shops Products\Data\bin\Release\EntityFramework.xml
+D:\dev\projects\Shops Products\Data\bin\Release\EntityFramework.SqlServer.xml
+D:\dev\projects\Shops Products\Data\obj\Release\ShopsProducts.Data.csprojResolveAssemblyReference.cache
+D:\dev\projects\Shops Products\Data\obj\Release\ShopsProducts.Data.csproj.CoreCompileInputs.cache
+D:\dev\projects\Shops Products\Data\obj\Release\ShopsProducts.Data.csproj.CopyComplete
+D:\dev\projects\Shops Products\Data\obj\Release\Data.dll
+D:\dev\projects\Shops Products\Data\obj\Release\Data.pdb

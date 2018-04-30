@@ -1,53 +1,70 @@
 ﻿@using ShopsProducts.SDK;
 
-@model IEnumerable<ISingleItem>
+@model SearchResults
 
 @{
     ViewBag.Title = "EBay";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_EBayLayout.cshtml";
 }
 
-<div class="row oneshop-top">
-    <div class="col-md-1">
-        <img src="~/Content/Images/Logo/eBayLogo.jpg" width="130px" />
-    </div>
-    <div class="col-md-10 col-md-offset-1 query-form">
-        @using (Html.BeginForm("EBay", "Shops"))
-        {
-            @Html.TextBox("query", "", new { @class = "form-control inline-block query-searchline" })
-            <input type="submit" name="search" value="Search" class="btn btn-primary query-buttonsubmit" />
+@if (Model != null && !string.IsNullOrEmpty(Model.Text))
+{
+    <div class="list-pagging">
+        @{
+            int startIndex = Model.PageIndex;
+
+            if (startIndex < 5)
+            {
+                startIndex = 1;
+            }
+            else
+            {
+                startIndex -= 5;
+            }
+
+            for (int i = 0; i < 10; i++, startIndex++)
+            {
+                if (startIndex == Model.PageIndex)
+                {
+                    <span>@startIndex</span>
+                }
+                else
+                {
+                    <a href="@Url.Action("Ebay", "Shops", new { query = Model.Text, pageIndex = startIndex })">@startIndex</a>
+                }
+            }
         }
     </div>
+}
+<div>
+    <ul>
+        @if (Model != null)
+        {
+            ISingleItem[] array = Model.Results.ToArray();
 
-    <div class="col-md-10 col-md-offset-1">
-        <ul>
-            @if (ViewBag.items != null)
+            for (int i = 0; i < array.Length; i++)
             {
-                ISingleItem[] array = Model;
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    <li>
-                        <hr />
-                        <div class="list-image-left inline-block">
-                            <a href="@Url.Action("EbayItem", "Shops", new { id = array[i].Id })">
-                                <img src="@array[i].GalleryUrl" alt="@array[i].Title" class="img-rounded" />
+                <li>
+                    <hr />
+                    <div class="list-image-left inline-block">
+                        <a href="@Url.Action("EbayItem", "Shops", new { id = array[i].ItemId })">
+                            <img src="@array[i].GalleryUrl" alt="@array[i].Title" class="img-rounded" />
+                        </a>
+                    </div>
+                    <div class="list-alltext inline-block">
+                        <h3 class="list-title">
+                            <a href="@Url.Action("EbayItem", "Shops", new { id = array[i].ItemId })">
+                                @array[i].Title
                             </a>
+                        </h3>
+                        <div class="list-price">
+                            @string.Format(CultureFromCountry.GetCulture(array[i].Country), "{0:C}", array[i].Price)
                         </div>
-                        <div class="list-alltext inline-block">
-                            <h3 class="list-title">
-                                <a href="@Url.Action("EbayItem", "Shops", new { id = array[i].Id })">
-                                    @array[i].Title
-                                </a>
-                            </h3>
-                            <div class="list-price">
-                                @string.Format(CultureFromCountry.GetCulture(array[i].Country), "{0:C}", array[i].Price)
-                            </div>
-                        </div>
-                    </li>
-                }
-                <hr />
+                    </div>
+                </li>
             }
-        </ul>
-    </div>
+            <hr />
+        }
+    </ul>
 </div>
+

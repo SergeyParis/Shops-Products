@@ -1,10 +1,49 @@
 ﻿@using ShopsProducts.SDK;
 
-@model IDetailsSingleItem
+@model ISingleItem
 
 @{
-    ViewBag.Title = "EbayItem";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_EBayLayout.cshtml";
 }
 
-<h2>EbayItem</h2>
+@{
+    bool picturesExist = Model.Details.ImagesUrl != null && Model.Details.ImagesUrl.Count() > 0;
+    string[] images;
+
+    if (picturesExist)
+    {
+        images = Model.Details.ImagesUrl.ToArray();
+    }
+    else
+    {
+        images = null;
+    }
+}
+
+<div>
+    <h2 class="detail-title">@Model.Title</h2>
+</div>
+<div class="detail-price ">
+    <span>Price: @Model.Price</span>
+</div>
+
+<div class="detail-div-other-imgs">
+    @if (picturesExist)
+    {
+        int counter = 0;
+        foreach (string url in images)
+        {
+            if (counter % 3 == 1)
+            {
+                <img id="otherImage@i" src="@images[counter++]" alt="@Model.Title" class="img-rounded detail-other-imgs inline-block" />
+                continue;
+            }
+            <img id="otherImage@i" src="@images[counter++]" alt="@Model.Title" class="img-rounded detail-other-imgs" />
+        }
+    }
+    else
+    {
+        <img src="@Model.GalleryUrl" alt="@Model.Title" class="img-rounded detail-img" />
+    }
+</div>

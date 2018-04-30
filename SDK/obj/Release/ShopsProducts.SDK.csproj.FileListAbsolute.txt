@@ -1,0 +1,7 @@
+D:\dev\projects\Shops Products\SDK\bin\Release\SDK.dll
+D:\dev\projects\Shops Products\SDK\bin\Release\SDK.pdb
+D:\dev\projects\Shops Products\SDK\obj\Release\ShopsProducts.SDK.Shops.eBay.eBaySource.resources
+D:\dev\projects\Shops Products\SDK\obj\Release\ShopsProducts.SDK.csproj.GenerateResource.cache
+D:\dev\projects\Shops Products\SDK\obj\Release\ShopsProducts.SDK.csproj.CoreCompileInputs.cache
+D:\dev\projects\Shops Products\SDK\obj\Release\SDK.dll
+D:\dev\projects\Shops Products\SDK\obj\Release\SDK.pdb

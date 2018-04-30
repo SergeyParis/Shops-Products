@@ -23,12 +23,16 @@ namespace Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            InitSDK();
+            Initialize();
         }
 
-        private void InitSDK()
+        private void Initialize()
         {
             ShopsProducts.SDK.eBay.EBayAPI.AppID = "SergeyPa-oil-PRD-be04e9d4e-5f87abbe";
+
+            ShopsProducts.Data.ShopsProductsContext context = new ShopsProducts.Data.ShopsProductsContext();
+            context.Database.Delete();
+            context.Database.CreateIfNotExists();
         }
     }
 }

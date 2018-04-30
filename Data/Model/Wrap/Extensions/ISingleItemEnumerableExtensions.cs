@@ -1,24 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using ShopsProducts.SDK.eBay;
+using ShopsProducts.SDK;
 
 namespace ShopsProducts.Data
 {
     public static class ISingleItemEnumerableExtensions
     {
-        public static IEnumerable<SingleItemWrapped> ToWrapped(this IEnumerable<SDK.ISingleItem> collection)
+        public static IEnumerable<SingleItemWrapped> Wrapped(this IEnumerable<ISingleItem> collection)
         {
-            IEnumerator<SDK.ISingleItem> enumerator = collection.GetEnumerator();
+            if (collection == null)
+                return null;
 
-            int length = 0;
-            while (enumerator.MoveNext())
-                length++;
-
-            SingleItemWrapped[] array = new SingleItemWrapped[length];
+            SingleItemWrapped[] c = new SingleItemWrapped[collection.Count()];
 
             int i = 0;
-            foreach (SDK.ISingleItem one in collection)
-                array[i++] = one.ToWrapped();
+            foreach (var one in collection)
+                if (one != null)
+                    c[i++] = one.Wrapped();
+                else
+                    c[i++] = null;
 
-            return array;
+            return c;
         }
+        public static IEnumerable<EBaySingleItem> UnWrappedToEbay(this IEnumerable<SingleItemWrapped> collection) => collection.Select(it => it.UnWrappedToEbay());
     }
 }

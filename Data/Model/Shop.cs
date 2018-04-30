@@ -4,15 +4,16 @@ namespace ShopsProducts.Data
 {
     public class Shop
     {
-        internal int Id { get; set; }
+        public int Id { get; set; }
         
         public string Name { get; set; }
         public List<SearchResultsWrapped> SearchResults { get; set; }
 
-        internal Shop() { }
+        internal Shop() : this("") { }
         public Shop(string name)
         {
             Name = name;
+            SearchResults = new List<SearchResultsWrapped>();
         }
     }
 }

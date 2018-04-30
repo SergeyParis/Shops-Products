@@ -6,12 +6,12 @@ namespace ShopsProducts.Data
     {
         public ItemDetailsConfiguration()
         {
-            Map(it => it.ToTable("Items"));
+            Map(it => it.ToTable("ItemsDetails"));
 
-            Property(it => it.SingleItem.Id).IsRequired().HasColumnType("bigint");
+            Property(it => it.Id).IsRequired().HasColumnType("bigint");
             Property(it => it.ImagesUrlString).HasColumnType("ntext");
 
-            HasKey(it => it.SingleItem.Id);
+            HasKey(it => it.Id);
         }
     }
 }
