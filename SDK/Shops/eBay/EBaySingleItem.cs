@@ -20,5 +20,32 @@
             Country = country;
             Price = price;
         }
+
+        public override bool Equals(object obj)
+        {
+            return this == obj;
+        }
+        public override int GetHashCode() => base.GetHashCode();
+
+        public static bool operator ==(EBaySingleItem first, object second)
+        {
+            if (second is EBaySingleItem)
+            {
+                EBaySingleItem second2 = (EBaySingleItem)second;
+
+                return first.ItemId == second2.ItemId &&
+                       first.Title == second2.Title &&
+                       first.GalleryUrl == second2.GalleryUrl &&
+                       first.Url == second2.Url &&
+                       first.Country == second2.Country &&
+                       first.Price == second2.Price;
+            }
+            else
+                return false;
+        }
+        public static bool operator !=(EBaySingleItem first, object second)
+        {
+            return !(first == second);
+        }
     }
 }

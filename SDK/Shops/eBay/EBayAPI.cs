@@ -41,25 +41,42 @@ namespace ShopsProducts.SDK.eBay
 
         public async static Task<SearchResults> GetProducts(string keywords, int pageIndex = 1)
         {
-            Task<XmlReader> task = new Task<XmlReader>((o) => Get_ItemsByKeywords(o), new { keywords = keywords, pageIndex = pageIndex });
-            task.Start();
+            try
+            {
 
-            XmlReader reader = await task;
-            IEnumerable<ISingleItem> results = ReadItemsByKeywords(reader);
-            return new SearchResults(keywords, pageIndex) { Results = results };
+                Task<XmlReader> task = new Task<XmlReader>((o) => Get_ItemsByKeywords(o), new { keywords = keywords, pageIndex = pageIndex });
+                task.Start();
+
+                XmlReader reader = await task;
+                IEnumerable<ISingleItem> results = ReadItemsByKeywords(reader);
+
+                return new SearchResults(keywords, pageIndex) { Results = results };
+            }
+            catch
+            {
+                throw;
+            }
         }
         public async static Task<SearchResults> GetProductsWithDetails(string keywords, int pageIndex = 1)
         {
             SearchResults searchResults = await GetProducts(keywords, pageIndex);
-            IEnumerable<IDetailsSingleItem> details = await GetProductsDetail(searchResults.Results.Select(it => it.ItemId).ToArray());
 
-            IDetailsSingleItem[] detailsArray = details.ToArray();
-            ISingleItem[] singleArray = searchResults.Results.ToArray();
+            try
+            {
+                IEnumerable<IDetailsSingleItem> details = await GetProductsDetail(searchResults.Results.Select(it => it.ItemId).ToArray());
 
-            for (int i = 0; i < singleArray.Length; i++)
-                singleArray[i].Details = detailsArray[i];
+                IDetailsSingleItem[] detailsArray = details.ToArray();
+                ISingleItem[] singleArray = searchResults.Results.ToArray();
 
-            searchResults.Results = singleArray;
+                for (int i = 0; i < singleArray.Length; i++)
+                    singleArray[i].Details = detailsArray[i];
+
+                searchResults.Results = singleArray;
+            }
+            catch
+            {
+                throw;
+            }
 
             return searchResults;
         }
@@ -71,11 +88,11 @@ namespace ShopsProducts.SDK.eBay
             XmlDocument document = new XmlDocument();
 
             document.LoadXml(response.Content.ReadAsStringAsync().Result);
-            
+
             XmlReader reader = XmlReaderFactory.GetReader(document);
             return ReadItemsByIds(reader);
         }
-        
+
         private static XmlReader Get_ItemsByKeywords(dynamic d)
         {
             string keywords = d.keywords ?? "";
@@ -95,7 +112,14 @@ namespace ShopsProducts.SDK.eBay
             url.Append("&itemFilter.name=" + "HideDuplicateItems");
             url.Append("&itemFilter.value=" + "true");
 
-            return XmlReaderFactory.GetReader(url.ToString());
+            try
+            {
+                return XmlReaderFactory.GetReader(url.ToString());
+            }
+            catch
+            {
+                throw;
+            }
         }
         private static HttpContent Post_DetailstByIds(long[] id)
         {
@@ -114,9 +138,9 @@ namespace ShopsProducts.SDK.eBay
             foreach (long one in id)
                 items.Add(new XElement(xNamespace + "ItemID", one.ToString()));
             XDocument xml = new XDocument(items);
-            
+
             StringContent content = new StringContent("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + xml.ToString());
-            
+
             content.Headers.Clear();
             foreach (KeyValuePair<string, string> one in headers)
                 content.Headers.Add(one.Key, one.Value);
@@ -126,66 +150,86 @@ namespace ShopsProducts.SDK.eBay
 
         private static IEnumerable<EBaySingleItem> ReadItemsByKeywords(XmlReader reader)
         {
+            if (reader == null)
+                return null;
+
             List<EBaySingleItem> items = new List<EBaySingleItem>(_entriesPerPage);
 
-            while (reader.Read())
-                if (reader.IsStartElement())
-                    switch (reader.Name)
-                    {
-                        case "item":
-                            items.Add(new EBaySingleItem());
-                            break;
-                        case "itemId":
-                            reader.Read();
-                            items[items.Count - 1].ItemId = Convert.ToInt64(reader.Value.Trim());
-                            break;
-                        case "title":
-                            reader.Read();
-                            items[items.Count - 1].Title = reader.Value.Trim();
-                            break;
-                        case "galleryURL":
-                            reader.Read();
-                            items[items.Count - 1].GalleryUrl = reader.Value.Trim();
-                            break;
-                        case "viewItemURL":
-                            reader.Read();
-                            items[items.Count - 1].Url = reader.Value.Trim();
-                            break;
-                        case "country":
-                            reader.Read();
-                            items[items.Count - 1].Country = reader.Value.Trim();
-                            break;
-                        case "currentPrice":
-                            reader.Read();
-                            items[items.Count - 1].Price = Convert.ToDecimal(reader.Value.Trim().Replace('.', ','));
-                            break;
-                    }
+            try
+            {
+                while (reader.Read())
+                    if (reader.IsStartElement())
+                        switch (reader.Name)
+                        {
+                            case "item":
+                                items.Add(new EBaySingleItem());
+                                break;
+                            case "itemId":
+                                reader.Read();
+                                items[items.Count - 1].ItemId = Convert.ToInt64(reader.Value.Trim());
+                                break;
+                            case "title":
+                                reader.Read();
+                                items[items.Count - 1].Title = reader.Value.Trim();
+                                break;
+                            case "galleryURL":
+                                reader.Read();
+                                items[items.Count - 1].GalleryUrl = reader.Value.Trim();
+                                break;
+                            case "viewItemURL":
+                                reader.Read();
+                                items[items.Count - 1].Url = reader.Value.Trim();
+                                break;
+                            case "country":
+                                reader.Read();
+                                items[items.Count - 1].Country = reader.Value.Trim();
+                                break;
+                            case "currentPrice":
+                                reader.Read();
+                                items[items.Count - 1].Price = Convert.ToDecimal(reader.Value.Trim().Replace('.', ','));
+                                break;
+                        }
+            }
+            catch
+            {
+                throw;
+            }
 
             return items.ToArray();
         }
         private static IEnumerable<EBayDetailsSingleItem> ReadItemsByIds(XmlReader reader)
         {
+            if (reader == null)
+                return null;
+
             List<EBayDetailsSingleItem> items = new List<EBayDetailsSingleItem>(20);
 
-            while (reader.Read())
-                if (reader.IsStartElement() && reader.Name == "Item")
-                    break;
+            try
+            {
+                while (reader.Read())
+                    if (reader.IsStartElement() && reader.Name == "Item")
+                        break;
 
-            List<string> tempUrls = new List<string>(10);
+                List<string> tempUrls = new List<string>(10);
 
-            while (reader.Read())
-                if (reader.IsStartElement())
-                    switch (reader.Name)
-                    {
-                        case "PictureURL":
-                            reader.Read();
-                            tempUrls.Add(reader.Value.Trim());
-                            break;
-                        case "PrimaryCategoryName":
-                            items.Add(new EBayDetailsSingleItem(tempUrls.ToArray()));
-                            tempUrls = new List<string>(10);
-                            break;
-                    }
+                while (reader.Read())
+                    if (reader.IsStartElement())
+                        switch (reader.Name)
+                        {
+                            case "PictureURL":
+                                reader.Read();
+                                tempUrls.Add(reader.Value.Trim());
+                                break;
+                            case "PrimaryCategoryName":
+                                items.Add(new EBayDetailsSingleItem(tempUrls.ToArray()));
+                                tempUrls = new List<string>(10);
+                                break;
+                        }
+            }
+            catch
+            {
+                throw;
+            }
 
             return items.ToArray();
         }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <GetMultipleItemsResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+   <Timestamp>2018-05-04T14:08:57.830Z</Timestamp>
+   <Ack>Success</Ack>
+   <Build>E1059_CORE_APILW_18692637_R1</Build>
+   <Version>1059</Version>
+   <Item>
+    <ItemID>222946434826</ItemID>
+    <EndTime>2018-05-02T14:02:06.000Z</EndTime>
+    <ViewItemURLForNaturalSearch>http://www.ebay.com/itm/Black-Diamond-Camalot-Size-4-C4-/222946434826</ViewItemURLForNaturalSearch>
+    <ListingType>Chinese</ListingType>
+    <Location>Harman, West Virginia</Location>
+    <GalleryURL>http://thumbs3.ebaystatic.com/pict/2229464348268080_1.jpg</GalleryURL>
+    <PictureURL>https://i.ebayimg.com/$_12.JPG?set_id=880000500F</PictureURL>
+    <PictureURL>https://i.ebayimg.com/$_12.JPG?set_id=880000500F</PictureURL>
+    <PictureURL>https://i.ebayimg.com/$_12.JPG?set_id=880000500F</PictureURL>
+    <PrimaryCategoryID>50814</PrimaryCategoryID>
+    <PrimaryCategoryName>Sporting Goods:Outdoor Sports:Climbing &amp; Caving:Carabiners &amp; Hardware</PrimaryCategoryName>
+    <BidCount>19</BidCount>
+    <ConvertedCurrentPrice currencyID="USD">47.0</ConvertedCurrentPrice>
+    <ListingStatus>Completed</ListingStatus>
+    <TimeLeft>PT0S</TimeLeft>
+    <Title>Black Diamond Camalot Size #4 C4</Title>
+    <Country>US</Country>
+    <AutoPay>true</AutoPay>
+    <ConditionID>3000</ConditionID>
+    <ConditionDisplayName>Used</ConditionDisplayName>
+    <GlobalShipping>true</GlobalShipping>
+   </Item>
+   <Item>
+    <ItemID>132606445555</ItemID>
+    <EndTime>2018-05-08T23:43:41.000Z</EndTime>
+    <ViewItemURLForNaturalSearch>http://www.ebay.com/itm/BLACK-DIAMOND-Rock-Climbing-3-Camalot-CAM-/132606445555</ViewItemURLForNaturalSearch>
+    <ListingType>Chinese</ListingType>
+    <Location>Sebastopol, California</Location>
+    <GalleryURL>http://thumbs4.ebaystatic.com/pict/1326064455558080_1.jpg</GalleryURL>
+    <PictureURL>https://i.ebayimg.com/$_12.JPG?set_id=880000500F</PictureURL>
+    <PictureURL>https://i.ebayimg.com/$_12.JPG?set_id=880000500F</PictureURL>
+    <PrimaryCategoryID>50814</PrimaryCategoryID>
+    <PrimaryCategoryName>Sporting Goods:Outdoor Sports:Climbing &amp; Caving:Carabiners &amp; Hardware</PrimaryCategoryName>
+    <BidCount>3</BidCount>
+    <ConvertedCurrentPrice currencyID="USD">24.5</ConvertedCurrentPrice>
+    <ListingStatus>Active</ListingStatus>
+    <TimeLeft>P4DT9H34M44S</TimeLeft>
+    <Title>BLACK DIAMOND Rock Climbing #3 Camalot CAM</Title>
+    <Country>US</Country>
+    <AutoPay>false</AutoPay>
+    <ConditionID>3000</ConditionID>
+    <ConditionDisplayName>Used</ConditionDisplayName>
+    <GlobalShipping>true</GlobalShipping>
+   </Item>
+  </GetMultipleItemsResponse>
+ 

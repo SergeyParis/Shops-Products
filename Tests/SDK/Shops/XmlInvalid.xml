@@ -1,0 +1,58 @@
+<findItemsByKeywordsResponse 
+  xmlns="http://www.ebay.com/marketplace/search/v1/services">
+  <ack>Success</ack>
+  <version>1.13.0</version>
+  <timestamp>2018-05-02T13:45:50.696Z</timestamp>
+  <searchResult count="2">
+    <item>
+      <itemId>222946434826</itemId>
+      <title>Black Diamond Camalot Size #4 C4</title>
+      <globalId>EBAY-US</globalId>
+      <primaryCategory>
+        <categoryId>50814</categoryId>
+      
+      <sellingStatus>
+        <currentPrice currencyId="USD">46.0</currentPrice>
+        <convertedCurrentPrice currencyId="USD">46.0</convertedCurrentPrice>
+        <bidCount>18</bidCount>
+        <sellingState>Active</sellingState>
+        <timeLeft>P0DT0H16M16S</timeLeft>
+      </sellingStatus>
+      <listingInfo>
+        <bestOfferEnabled>false</bestOfferEnabled>
+        <buyItNowAvailable>false</buyItNowAvailable>
+        <startTime>2018-04-25T14:02:06.000Z</startTime>
+        <endTime>2018-05-02T14:02:06.000Z</endTime>
+        <listingType>Auction</listingType>
+        <gift>false</gift>
+        <watchCount>23</watchCount>
+      </listingInfo>
+      <returnsAccepted>false</returnsAccepted>
+    <item>
+      <itemId>132606445555</itemId>
+      <title>BLACK DIAMOND Rock Climbing #3 Camalot CAM</title>
+      <globalId>EBAY-US</globalId>
+      <primaryCategory>
+    
+        <convertedCurrentPrice currencyId="USD">20.0</convertedCurrentPrice>
+        <bidCount>0</bidCount>
+        <sellingState>Active</sellingState>
+        <timeLeft>P6DT9H57M51S</timeLeft>
+      </sellingStatus>
+      <listingInfo>
+        <bestOfferEnabled>false</bestOfferEnabled>
+        <buyItNowAvailable>false</buyItNowAvailable>
+        <startTime>2018-05-01T23:43:41.000Z</startTime>
+        <endTime>2018-05-08T23:43:41.000Z</endTime>
+        <listingType>Auction</listingType>
+        <gift>false</gift>
+        <watchCount>5</watchCount>
+      </listingInfo>
+
+  <paginationOutput>
+    <pageNumber>1</pageNumber>
+    <entriesPerPage>2</entriesPerPage>
+    <totalPages>176</totalPages>
+    <totalEntries>352</totalEntries>
+  </paginationOutput>
+ </findItemsByKeywordsResponse>

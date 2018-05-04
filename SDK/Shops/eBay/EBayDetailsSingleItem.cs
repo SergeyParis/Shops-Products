@@ -13,5 +13,29 @@ namespace ShopsProducts.SDK.eBay
         {
             ImagesUrl = images;
         }
+
+        public override bool Equals(object obj)
+        {
+            EBayDetailsSingleItem item = obj as EBayDetailsSingleItem;
+
+            string[] thisArray = ImagesUrl.ToArray();
+            string[] compareArray = item.ImagesUrl.ToArray();
+
+            if (thisArray.Length != compareArray.Length)
+                return false;
+
+            if (item != null)
+            {
+                for (int i = 0; i < thisArray.Length; i++)
+                    if (thisArray[i] != compareArray[i])
+                        return false;
+
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public override int GetHashCode() => base.GetHashCode();
     }
 }
