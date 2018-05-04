@@ -68,10 +68,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleTest\ShopsProducts.ConsoleTest.csproj">
-      <Project>{5bd467e1-3fc3-4c68-91ae-0a50f4e75dc2}</Project>
-      <Name>ShopsProducts.ConsoleTest</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data\ShopsProducts.Data.csproj">
       <Project>{2fc0b11b-9281-4e5a-b2d2-6cfe9de50b9e}</Project>
       <Name>ShopsProducts.Data</Name>
